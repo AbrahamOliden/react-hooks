@@ -66,7 +66,11 @@ const App = () => {
             <ContenidoGaleria>
               <Banner texto="La galería más completa de fotos del espacio" backgroundImage={banner} />
 
-              <Galeria alSeleccionarFoto={foto => setFotoSeleccionada(foto)} fotos={fotosDeGaleria} alAlternarFavorito={alAlternarFavorito} />
+              <Galeria
+                search={search}
+                alSeleccionarFoto={foto => setFotoSeleccionada(foto)} 
+                fotos={fotosDeGaleria} 
+                alAlternarFavorito={alAlternarFavorito} />
             </ContenidoGaleria>
           </MainContainer>
         </AppContainer>

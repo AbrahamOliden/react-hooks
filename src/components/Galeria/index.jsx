@@ -20,7 +20,7 @@ const ImagenesContainer = styled.section`
 `
 
 
-const Galeria = ({ fotos = [], alSeleccionarFoto,alAlternarFavorito }) => {
+const Galeria = ({ search, fotos = [], alSeleccionarFoto,alAlternarFavorito }) => {
 
     return (
         <>
