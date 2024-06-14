@@ -31,7 +31,10 @@ const Galeria = ({ search, fotos = [], alSeleccionarFoto,alAlternarFavorito }) =
                     <ImagenesContainer>
                         {fotos
                         .filter(foto => {
-                            return search === '' || foto.titulo.toLowerCase().includes(search.toLowerCase())
+                            return search === '' 
+                            || 
+                            foto.titulo.toLocaleLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '')
+                            .includes(search.toLocaleLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, ''))
                         })
                         .map(foto => <Imagen
                         alAlternarFavorito= {alAlternarFavorito}
