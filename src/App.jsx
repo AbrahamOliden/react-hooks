@@ -6,7 +6,7 @@ import Banner from "./components/Banner"
 import banner from "./assets/banner.png"
 import Galeria from "./components/Galeria"
 import fotos from "./fotos.json"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import ModalZoom from "./components/ModalZoom"
 import Pie from "./components/Pie"
 
@@ -53,6 +53,10 @@ const App = () => {
       }
     }))
   }
+
+  useEffect(() => {
+    console.log('Gas a tu efectiva madre');
+  }, [fotosDeGaleria]);
 
 
   return (
