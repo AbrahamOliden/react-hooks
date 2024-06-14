@@ -32,6 +32,7 @@ const ContenidoGaleria = styled.section`
 
 
 const App = () => {
+  const [search, setSearch] = useState('');
   const [fotosDeGaleria, setFotosDeGaleria] = useState(fotos)
   const [fotoSeleccionada, setFotoSeleccionada] = useState(null)
 
@@ -59,7 +60,7 @@ const App = () => {
       <FondoGradiente>
         <GlobalStyles />
         <AppContainer>
-          <Cabecera />
+          <Cabecera setSearch={setSearch} />
           <MainContainer>
             <BarraLateral />
             <ContenidoGaleria>
