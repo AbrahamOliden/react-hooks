@@ -35,7 +35,10 @@ const CampoTexto = ({ setSearch }) => {
     
     return (
         <ContainerEstilizado>
-            <CampoTextoEstilizado type="text" placeholder="¿Qué estás buscando?"/>
+            <CampoTextoEstilizado 
+                type="text" 
+                placeholder="¿Qué estás buscando?"
+                onChange={(e) => setSearch(e.target.value)}/>
             <IconoLupa src={search} alt="ícono de lupa" />
         </ContainerEstilizado>
     )
