@@ -29,7 +29,11 @@ const Galeria = ({ search, fotos = [], alSeleccionarFoto,alAlternarFavorito }) =
                 <SeccionFluida>
                     <Titulo>Navegue por la galería</Titulo>
                     <ImagenesContainer>
-                        {fotos.map(foto => <Imagen
+                        {fotos
+                        .filter(foto => {
+                            return search === '' || foto.titulo.toLowerCase().includes(search.toLowerCase())
+                        })
+                        .map(foto => <Imagen
                         alAlternarFavorito= {alAlternarFavorito}
                         alSolicitarZoom={alSeleccionarFoto}
                             key={foto.id}
