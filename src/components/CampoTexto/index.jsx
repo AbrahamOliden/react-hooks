@@ -31,7 +31,7 @@ const IconoLupa = styled.img`
     height: 38px;
 `;
 
-const CampoTexto = () => {
+const CampoTexto = ({ setSearch }) => {
     
     return (
         <ContainerEstilizado>
