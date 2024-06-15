@@ -20,8 +20,12 @@ const ImagenesContainer = styled.section`
 `
 
 
-const Galeria = ({ search, fotos = [], alSeleccionarFoto,alAlternarFavorito }) => {
+const Galeria = ({ search, fotos = [], alSeleccionarFoto, alAlternarFavorito }) => {
 
+    // fotosDeGaleria.length === 0
+    //               ? <Cargando />
+    //               :
+    //! Ay te boing
     return (
         <>
             <Tag />
