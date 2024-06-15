@@ -23,9 +23,9 @@ const ImagenesContainer = styled.section`
 `
 
 
-const Galeria = ({ alSeleccionarFoto, alAlternarFavorito }) => {
+const Galeria = () => {
 
-    const { search, fotosDeGaleria } = useContext(GlobalContext)
+    const { search, fotosDeGaleria, alAlternarFavorito } = useContext(GlobalContext)
 
     return (
         fotosDeGaleria.length === 0
@@ -45,7 +45,7 @@ const Galeria = ({ alSeleccionarFoto, alAlternarFavorito }) => {
                         })
                         .map(foto => <Imagen
                         alAlternarFavorito= {alAlternarFavorito}
-                        alSolicitarZoom={alSeleccionarFoto}
+                        alSolicitarZoom={foto => setFotoSeleccionada(foto)}
                             key={foto.id}
                             foto={foto} />)
                         }
