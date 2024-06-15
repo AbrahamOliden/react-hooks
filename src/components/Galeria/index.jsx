@@ -3,6 +3,9 @@ import Titulo from "../Titulo"
 import Populares from "./Populares"
 import Tag from "./Tags"
 import Imagen from "./Imagen"
+import Cargando from "../Cargando"
+import { useContext } from "react"
+import { GlobalContext } from "../../context/GlobalContext"
 
 const GaleriaContainer = styled.div`
 display: flex;
@@ -20,20 +23,20 @@ const ImagenesContainer = styled.section`
 `
 
 
-const Galeria = ({ search, fotos = [], alSeleccionarFoto, alAlternarFavorito }) => {
+const Galeria = ({ alSeleccionarFoto, alAlternarFavorito }) => {
 
-    // fotosDeGaleria.length === 0
-    //               ? <Cargando />
-    //               :
-    //! Ay te boing
+    const { search, fotosDeGaleria } = useContext(GlobalContext)
+
     return (
-        <>
+        fotosDeGaleria.length === 0
+            ? <Cargando />
+            : <>
             <Tag />
             <GaleriaContainer>
                 <SeccionFluida>
                     <Titulo>Navegue por la galería</Titulo>
                     <ImagenesContainer>
-                        {fotos
+                        {fotosDeGaleria
                         .filter(foto => {
                             return search === '' 
                             || 
