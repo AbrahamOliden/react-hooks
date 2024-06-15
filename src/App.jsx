@@ -31,9 +31,6 @@ const ContenidoGaleria = styled.section`
 `;
 
 const App = () => {
-  
-  const [fotosDeGaleria, setFotosDeGaleria] = useState([]);
-  const [fotoSeleccionada, setFotoSeleccionada] = useState(null);
 
   const alAlternarFavorito = (foto) => {
 
