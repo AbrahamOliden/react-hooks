@@ -6,10 +6,10 @@ import React from 'react'
 
 const GlobalContextProvider = ({children}) => {
     
-    //const [search, setSearch] = useState('');
+    const [search, setSearch] = useState('');
 
     return (
-        <GlobalContext.Provider /*value={{ search, setSearch } }*/ >
+        <GlobalContext.Provider value={{ search, setSearch } } >
             {children}
         </GlobalContext.Provider>
     )
