@@ -55,14 +55,13 @@ const App = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const receive = await fetch('http://localhost:5000/fotos');
-      const data = await receive.json();
-      console.log(data);
+      const res = await fetch('http://localhost:5000/fotos');
+      const data = await res.json();
+      setFotosDeGaleria([...data]);
     };
 
-    getData();
+    setTimeout(() => getData(), 3000);
   }, []);
-
 
   return (
     <>
