@@ -54,8 +54,14 @@ const App = () => {
   }
 
   useEffect(() => {
-    console.log('Gas a tu efectiva madre');
-  }, [fotosDeGaleria]);
+    const getData = async () => {
+      const receive = await fetch('http://localhost:5000/fotos');
+      const data = await receive.json();
+      console.log(data);
+    };
+
+    getData();
+  }, []);
 
 
   return (
