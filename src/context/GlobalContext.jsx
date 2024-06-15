@@ -39,7 +39,13 @@ const GlobalContextProvider = ({children}) => {
       }, []);
 
     return (
-        <GlobalContext.Provider value={{ search, setSearch } } >
+        <GlobalContext.Provider value={
+            { search, 
+            setSearch,
+            fotosDeGaleria,
+            fotoSeleccionada,
+            setFotoSeleccionada } 
+            } >
             {children}
         </GlobalContext.Provider>
     )
