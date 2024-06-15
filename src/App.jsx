@@ -4,6 +4,7 @@ import Cabecera from "./components/Cabecera"
 import BarraLateral from "./components/BarraLateral"
 import Banner from "./components/Banner"
 import banner from "./assets/banner.png"
+import Cargando from './components/Cargando'
 import Galeria from "./components/Galeria"
 import { useState, useEffect } from "react"
 import ModalZoom from "./components/ModalZoom"
@@ -67,19 +68,23 @@ const App = () => {
             <BarraLateral />
             <ContenidoGaleria>
               <Banner texto="La galería más completa de fotos del espacio" backgroundImage={banner} />
+              {
+                fotosDeGaleria.length === 0
+                  ? <Cargando />
+                  : <Galeria
+                    search={search}
+                    alSeleccionarFoto={foto => setFotoSeleccionada(foto)}
+                    fotos={fotosDeGaleria}
+                    alAlternarFavorito={alAlternarFavorito} />
 
-              <Galeria
-                search={search}
-                alSeleccionarFoto={foto => setFotoSeleccionada(foto)} 
-                fotos={fotosDeGaleria} 
-                alAlternarFavorito={alAlternarFavorito} />
+              }
             </ContenidoGaleria>
           </MainContainer>
         </AppContainer>
         <ModalZoom foto={fotoSeleccionada}
           alCerrar={() => setFotoSeleccionada(null)}
           alAlternarFavorito={alAlternarFavorito} />
-         <Pie/>
+        <Pie />
       </FondoGradiente>
     </>
   )
