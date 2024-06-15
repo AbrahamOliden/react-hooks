@@ -43,23 +43,13 @@ const App = () => {
             <MainContainer>
               <BarraLateral />
               <ContenidoGaleria>
-                <Banner 
-                  texto="La galería más completa de fotos del espacio" 
-                  backgroundImage={banner} 
-                />
-              
-                <Galeria
-                  search={search}
-                  alSeleccionarFoto={foto => setFotoSeleccionada(foto)}
-                  alAlternarFavorito={alAlternarFavorito} 
-                />
-                  
+                <Banner backgroundImage={banner}
+                  texto="La galería más completa de fotos del espacio" />
+                <Galeria /> 
               </ContenidoGaleria>
             </MainContainer>
           </AppContainer>
-          <ModalZoom foto={fotoSeleccionada}
-            alCerrar={() => setFotoSeleccionada(null)}
-            alAlternarFavorito={alAlternarFavorito} />
+          <ModalZoom />
         </GlobalContextProvider>
         <Pie />
       </FondoGradiente>
