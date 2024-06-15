@@ -1,5 +1,7 @@
 import styled from "styled-components"
 import CampoTexto from "../CampoTexto"
+import { useContext } from "react"
+import { GlobalContext } from "../../context/GlobalContext"
 
 
 const HeaderEstilizado = styled.header`
@@ -11,7 +13,10 @@ const HeaderEstilizado = styled.header`
     }
 `
 
-const Cabecera = ({ setSearch }) => {
+const Cabecera = () => {
+
+    const { setSearch } = useContext(GlobalContext)
+
     return <HeaderEstilizado>
         <img src="img/logo.png" alt="Logo de Space App" />
         <CampoTexto setSearch={setSearch} />
