@@ -1,8 +1,7 @@
-import { createContext } from "react";
-
-const GlobalContext = createContext();
-
 import React from 'react'
+import { useState, useEffect, createContext } from "react";
+
+export const GlobalContext = createContext();
 
 const GlobalContextProvider = ({children}) => {
     
@@ -45,8 +44,7 @@ const GlobalContextProvider = ({children}) => {
             fotosDeGaleria,
             fotoSeleccionada,
             setFotoSeleccionada,
-            alAlternarFavorito } 
-            } >
+            alAlternarFavorito } }>
             {children}
         </GlobalContext.Provider>
     )
