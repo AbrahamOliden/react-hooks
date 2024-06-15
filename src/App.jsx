@@ -1,12 +1,12 @@
 import styled from "styled-components"
 import GlobalStyles from "./components/GlobalStyles"
+import GlobalContextProvider from "./context/GlobalContext"
 import Cabecera from "./components/Cabecera"
 import BarraLateral from "./components/BarraLateral"
 import Banner from "./components/Banner"
 import banner from "./assets/banner.png"
 import Cargando from './components/Cargando'
 import Galeria from "./components/Galeria"
-import { useState, useEffect } from "react"
 import ModalZoom from "./components/ModalZoom"
 import Pie from "./components/Pie"
 
@@ -36,28 +36,33 @@ const App = () => {
     <>
       <FondoGradiente>
         <GlobalStyles />
-        <AppContainer>
-          <Cabecera setSearch={setSearch} />
-          <MainContainer>
-            <BarraLateral />
-            <ContenidoGaleria>
-              <Banner texto="La galería más completa de fotos del espacio" backgroundImage={banner} />
-              {
-                fotosDeGaleria.length === 0
+        <GlobalContextProvider>
+
+          <AppContainer>
+            <Cabecera setSearch={setSearch} />
+            <MainContainer>
+              <BarraLateral />
+              <ContenidoGaleria>
+                <Banner 
+                  texto="La galería más completa de fotos del espacio" 
+                  backgroundImage={banner} />
+                {
+                  fotosDeGaleria.length === 0
                   ? <Cargando />
                   : <Galeria
-                    search={search}
-                    alSeleccionarFoto={foto => setFotoSeleccionada(foto)}
-                    fotos={fotosDeGaleria}
-                    alAlternarFavorito={alAlternarFavorito} />
-
-              }
-            </ContenidoGaleria>
-          </MainContainer>
-        </AppContainer>
-        <ModalZoom foto={fotoSeleccionada}
-          alCerrar={() => setFotoSeleccionada(null)}
-          alAlternarFavorito={alAlternarFavorito} />
+                  search={search}
+                  alSeleccionarFoto={foto => setFotoSeleccionada(foto)}
+                  fotos={fotosDeGaleria}
+                  alAlternarFavorito={alAlternarFavorito} />
+                  
+                }
+              </ContenidoGaleria>
+            </MainContainer>
+          </AppContainer>
+          <ModalZoom foto={fotoSeleccionada}
+            alCerrar={() => setFotoSeleccionada(null)}
+            alAlternarFavorito={alAlternarFavorito} />
+        </GlobalContextProvider>
         <Pie />
       </FondoGradiente>
     </>
