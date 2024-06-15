@@ -39,23 +39,21 @@ const App = () => {
         <GlobalContextProvider>
 
           <AppContainer>
-            <Cabecera setSearch={setSearch} />
+            <Cabecera />
             <MainContainer>
               <BarraLateral />
               <ContenidoGaleria>
                 <Banner 
                   texto="La galería más completa de fotos del espacio" 
-                  backgroundImage={banner} />
-                {
-                  fotosDeGaleria.length === 0
-                  ? <Cargando />
-                  : <Galeria
+                  backgroundImage={banner} 
+                />
+              
+                <Galeria
                   search={search}
                   alSeleccionarFoto={foto => setFotoSeleccionada(foto)}
-                  fotos={fotosDeGaleria}
-                  alAlternarFavorito={alAlternarFavorito} />
+                  alAlternarFavorito={alAlternarFavorito} 
+                />
                   
-                }
               </ContenidoGaleria>
             </MainContainer>
           </AppContainer>
