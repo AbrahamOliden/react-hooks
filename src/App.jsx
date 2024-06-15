@@ -32,16 +32,6 @@ const ContenidoGaleria = styled.section`
 
 const App = () => {
 
-  useEffect(() => {
-    const getData = async () => {
-      const res = await fetch('http://localhost:5000/fotos');
-      const data = await res.json();
-      setFotosDeGaleria([...data]);
-    };
-
-    setTimeout(() => getData(), 3000);
-  }, []);
-
   return (
     <>
       <FondoGradiente>
