@@ -44,7 +44,8 @@ const GlobalContextProvider = ({children}) => {
             setSearch,
             fotosDeGaleria,
             fotoSeleccionada,
-            setFotoSeleccionada } 
+            setFotoSeleccionada,
+            alAlternarFavorito } 
             } >
             {children}
         </GlobalContext.Provider>
