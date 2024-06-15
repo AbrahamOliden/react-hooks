@@ -25,7 +25,7 @@ const ImagenesContainer = styled.section`
 
 const Galeria = () => {
 
-    const { search, fotosDeGaleria, alAlternarFavorito } = useContext(GlobalContext)
+    const { search, fotosDeGaleria, setFotoSeleccionada, alAlternarFavorito } = useContext(GlobalContext)
 
     return (
         fotosDeGaleria.length === 0
