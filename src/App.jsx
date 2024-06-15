@@ -31,7 +31,7 @@ const ContenidoGaleria = styled.section`
 `;
 
 const App = () => {
-  const [search, setSearch] = useState('');
+  
   const [fotosDeGaleria, setFotosDeGaleria] = useState([]);
   const [fotoSeleccionada, setFotoSeleccionada] = useState(null);
 
