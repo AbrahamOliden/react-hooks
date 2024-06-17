@@ -36,7 +36,7 @@ const Galeria = () => {
                     <SeccionFluida>
                         <Titulo>Navegue por la galería</Titulo>
                         <ImagenesContainer>
-                            {state
+                            {state.fotosDeGaleria
                                 .filter(foto => {
                                     return state.search === ''
                                         ||
