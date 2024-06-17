@@ -11,13 +11,24 @@ const initialState = {
 const reducer = (state, action) => {
   switch (action.type) {
     case 'SET_SEARCH':
-      return;
+      return {...state, search: action.payload()};
     case 'SET_FOTOS_DE_GALERIA':
-      return;
+      return {...state, fotosDeGaleria: action.payload()};
     case 'SET_FOTO_SELECCIONADA':
-      return;
+      return {...state, fotoSeleccionada: action.payload()};
     case 'AL_ALTERNAR_FAVORITO':
-      return;
+      return {...state,
+        fotosDeGaleria: fotosDeGaleria.map( fotoDeGaleria => {
+          return {...fotoDeGaleria,
+            favorita: fotoDeGaleria.id === foto.id 
+              ? !foto.favorita
+              : fotoDeGaleria.favorita
+          }
+        }),
+        fotoSeleccionada: {
+          ...state.fotoSeleccionada, favorita: !fotoSeleccionada.favorita
+        }
+      };
     default:
       return state;
   }
