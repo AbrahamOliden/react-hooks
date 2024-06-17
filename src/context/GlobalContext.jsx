@@ -20,17 +20,17 @@ const reducer = (state, action) => {
 
     const fotosDeGaleria = state.fotosDeGaleria.map( fotoDeGaleria => {
       return {...fotoDeGaleria,
-        favorita: fotoDeGaleria.id === foto.id 
-          ? !foto.favorita
+        favorita: fotoDeGaleria.id === action.payload.id 
+          ? !action.payload.favorita
           : fotoDeGaleria.favorita
       }
     });
 
-    if (action.payload.id === state.fotoSeleccionada.id) {
+    if (action.payload.id === state.fotoSeleccionada?.id) {
       return {...state,
         fotosDeGaleria: fotosDeGaleria,
         fotoSeleccionada: {
-          ...state.fotoSeleccionada, favorita: !fotoSeleccionada.favorita
+          ...state.fotoSeleccionada, favorita: !state.fotoSeleccionada.favorita
         }
       };
     } else {
