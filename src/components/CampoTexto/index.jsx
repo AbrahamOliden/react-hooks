@@ -32,7 +32,7 @@ const IconoLupa = styled.img`
     height: 38px;
 `;
 
-const CampoTexto = ({ setSearch }) => {
+const CampoTexto = () => {
 
     const searchInput = useRef(null);
     
@@ -46,7 +46,7 @@ const CampoTexto = ({ setSearch }) => {
                 src={search} 
                 alt="ícono de lupa"
                 onClick={() => {
-                    setSearch(searchInput.current.value);
+                    dispatch({ type: 'SET_SEARCH', payload: searchInput.current.value })
                 }}/>
         </ContainerEstilizado>
     )
