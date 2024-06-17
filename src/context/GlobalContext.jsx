@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext } from "react";
+import { useState, useEffect, createContext, useReducer } from "react";
 
 export const GlobalContext = createContext();
 
@@ -16,12 +16,16 @@ const reducer = (state, action) => {
       return;
     case 'SET_FOTO_SELECCIONADA':
       return;
+    case 'AL_ALTERNAR_FAVORITO':
+      return;
     default:
       return state;
   }
 };
 
 const GlobalContextProvider = ({children}) => {
+
+  const [state, dispatch] = useReducer(reducer, initialState);
     
     // const [search, setSearch] = useState('');
     // const [fotosDeGaleria, setFotosDeGaleria] = useState([]);
