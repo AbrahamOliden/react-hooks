@@ -71,13 +71,7 @@ const GlobalContextProvider = ({children}) => {
       }, []);
 
     return (
-        <GlobalContext.Provider value={
-            { search, 
-            setSearch,
-            fotosDeGaleria,
-            fotoSeleccionada,
-            setFotoSeleccionada,
-            alAlternarFavorito } }>
+        <GlobalContext.Provider value={{ state, dispatch }}>
             {children}
         </GlobalContext.Provider>
     )
