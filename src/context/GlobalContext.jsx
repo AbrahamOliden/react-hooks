@@ -11,11 +11,11 @@ const initialState = {
 const reducer = (state, action) => {
   switch (action.type) {
     case 'SET_SEARCH':
-      return {...state, search: action.payload()};
+      return {...state, search: action.payload};
     case 'SET_FOTOS_DE_GALERIA':
-      return {...state, fotosDeGaleria: action.payload()};
+      return {...state, fotosDeGaleria: action.payload};
     case 'SET_FOTO_SELECCIONADA':
-      return {...state, fotoSeleccionada: action.payload()};
+      return {...state, fotoSeleccionada: action.payload};
     case 'AL_ALTERNAR_FAVORITO':
       return {...state,
         fotosDeGaleria: fotosDeGaleria.map( fotoDeGaleria => {
