@@ -25,37 +25,34 @@ const ImagenesContainer = styled.section`
 
 const Galeria = () => {
 
-    // const { search, fotosDeGaleria, setFotoSeleccionada, alAlternarFavorito } = useContext(GlobalContext)
-    const {state, dispatch} = useContext(GlobalContext);
+    const { state } = useContext(GlobalContext);
 
     return (
         fotosDeGaleria.length === 0
             ? <Cargando />
             : <>
-            <Tag />
-            <GaleriaContainer>
-                <SeccionFluida>
-                    <Titulo>Navegue por la galería</Titulo>
-                    <ImagenesContainer>
-                        {fotosDeGaleria
-                        .filter(foto => {
-                            return search === '' 
-                            || 
-                            foto.titulo.toLocaleLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '')
-                            .includes(search.toLocaleLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, ''))
-                        })
-                        .map(foto => <Imagen
-                        alAlternarFavorito= {alAlternarFavorito}
-                        alSolicitarZoom={foto => setFotoSeleccionada(foto)}
-                            key={foto.id}
-                            foto={foto} />)
-                        }
-                    </ImagenesContainer>
-                </SeccionFluida>
-                <Populares />
+                <Tag />
+                <GaleriaContainer>
+                    <SeccionFluida>
+                        <Titulo>Navegue por la galería</Titulo>
+                        <ImagenesContainer>
+                            {state
+                                .filter(foto => {
+                                    return state.search === ''
+                                        ||
+                                        foto.titulo.toLocaleLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '')
+                                            .includes(state.search.toLocaleLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, ''))
+                                })
+                                .map(foto => <Imagen
+                                    key={foto.id}
+                                    foto={foto} />)
+                            }
+                        </ImagenesContainer>
+                    </SeccionFluida>
+                    <Populares />
 
-            </GaleriaContainer>
-        </>
+                </GaleriaContainer>
+            </>
     )
 }
 
