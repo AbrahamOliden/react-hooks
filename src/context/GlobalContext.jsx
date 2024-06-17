@@ -42,29 +42,30 @@ const GlobalContextProvider = ({children}) => {
     // const [fotosDeGaleria, setFotosDeGaleria] = useState([]);
     // const [fotoSeleccionada, setFotoSeleccionada] = useState(null);
 
-    const alAlternarFavorito = (foto) => {
+    // const alAlternarFavorito = (foto) => {
 
-        if (foto.id === fotoSeleccionada?.id) {
-          setFotoSeleccionada({
-            ...fotoSeleccionada,
-            favorita: !fotoSeleccionada.favorita
-          })
+    //     if (foto.id === fotoSeleccionada?.id) {
+    //       setFotoSeleccionada({
+    //         ...fotoSeleccionada,
+    //         favorita: !fotoSeleccionada.favorita
+    //       })
     
-        }
+    //     }
     
-        setFotosDeGaleria(fotosDeGaleria.map(fotoDeGaleria => {
-          return {
-            ...fotoDeGaleria,
-            favorita: fotoDeGaleria.id === foto.id ? !foto.favorita : fotoDeGaleria.favorita
-          }
-        }))
-      };
+    //     setFotosDeGaleria(fotosDeGaleria.map(fotoDeGaleria => {
+    //       return {
+    //         ...fotoDeGaleria,
+    //         favorita: fotoDeGaleria.id === foto.id ? !foto.favorita : fotoDeGaleria.favorita
+    //       }
+    //     }))
+    //   };
 
     useEffect(() => {
         const getData = async () => {
         const res = await fetch('http://localhost:5000/fotos');
         const data = await res.json();
-        setFotosDeGaleria([...data]);
+        // setFotosDeGaleria([...data]);
+        dispatch({ type: 'SET_FOTOS_DE_GALERIA', payload: data })
         };
     
         setTimeout(() => getData(), 3000);
