@@ -1,13 +1,31 @@
-import React from 'react'
 import { useState, useEffect, createContext } from "react";
 
 export const GlobalContext = createContext();
 
+const initialState = {
+  search: '',
+  fotosDeGaleria: [],
+  fotoSeleccionada: null
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'SET_SEARCH':
+      return;
+    case 'SET_FOTOS_DE_GALERIA':
+      return;
+    case 'SET_FOTO_SELECCIONADA':
+      return;
+    default:
+      return state;
+  }
+};
+
 const GlobalContextProvider = ({children}) => {
     
-    const [search, setSearch] = useState('');
-    const [fotosDeGaleria, setFotosDeGaleria] = useState([]);
-    const [fotoSeleccionada, setFotoSeleccionada] = useState(null);
+    // const [search, setSearch] = useState('');
+    // const [fotosDeGaleria, setFotosDeGaleria] = useState([]);
+    // const [fotoSeleccionada, setFotoSeleccionada] = useState(null);
 
     const alAlternarFavorito = (foto) => {
 
