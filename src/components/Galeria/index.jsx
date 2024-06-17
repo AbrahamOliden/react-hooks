@@ -28,7 +28,7 @@ const Galeria = () => {
     const { state } = useContext(GlobalContext);
 
     return (
-        fotosDeGaleria.length === 0
+        state.fotosDeGaleria.length === 0
             ? <Cargando />
             : <>
                 <Tag />
