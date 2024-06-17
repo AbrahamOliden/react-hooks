@@ -51,7 +51,7 @@ const Imagen = ({ foto, expandida = false }) => {
                 <h3>{foto.titulo}</h3>
                 <Pie>
                     <h4>{foto.fuente}</h4>
-                    <BotonIcono onClick={() => dispatch({ type: 'AL_ALTERNAR_FAVOORITO', payload: foto })}>
+                    <BotonIcono onClick={() => dispatch({ type: 'AL_ALTERNAR_FAVORITO', payload: foto })}>
                         <img src={iconoFavorito} alt="Icone de favorito" />
                     </BotonIcono>
                     {!expandida && <BotonIcono 
