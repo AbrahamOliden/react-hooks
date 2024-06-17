@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import { styled } from "styled-components"
 import search from './search.png'
 
@@ -35,19 +35,20 @@ const IconoLupa = styled.img`
 const CampoTexto = () => {
 
     const searchInput = useRef(null);
-    
+    const { dispatch } = useContext(GlobalContext);
+
     return (
         <ContainerEstilizado>
             <CampoTextoEstilizado
                 ref={searchInput}
-                type="text" 
-                placeholder="¿Qué estás buscando?"/>
-            <IconoLupa 
-                src={search} 
+                type="text"
+                placeholder="¿Qué estás buscando?" />
+            <IconoLupa
+                src={search}
                 alt="ícono de lupa"
                 onClick={() => {
                     dispatch({ type: 'SET_SEARCH', payload: searchInput.current.value })
-                }}/>
+                }} />
         </ContainerEstilizado>
     )
 }
