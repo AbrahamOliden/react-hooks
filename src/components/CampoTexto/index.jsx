@@ -1,6 +1,7 @@
 import { useContext, useRef } from "react";
 import { styled } from "styled-components"
 import search from './search.png'
+import { GlobalContext } from "../../context/GlobalContext";
 
 const ContainerEstilizado = styled.div`
     position: relative;
