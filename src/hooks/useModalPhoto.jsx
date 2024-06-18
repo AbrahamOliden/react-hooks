@@ -9,7 +9,7 @@ function useModalPhoto() {
     };
 
     const closeModal = (foto) => {
-        dispaatch({ type: 'SET_FOTO_SELECCIONADA', payload: null})
+        dispatch({ type: 'SET_FOTO_SELECCIONADA', payload: null})
     };
 
     const selectedPhoto = state.fotoSeleccionada;
