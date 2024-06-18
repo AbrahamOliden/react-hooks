@@ -2,6 +2,7 @@ import { styled } from "styled-components"
 import BotonIcono from "../../BotonIcono"
 import { useContext } from "react"
 import { GlobalContext } from "../../../context/GlobalContext"
+import useModalPhoto from "../../../hooks/useModalPhoto"
 
 const Figure = styled.figure`
     width: ${props => props.$expandida ? '90%' : '370px'};
@@ -39,7 +40,7 @@ const Pie = styled.footer`
 `
 
 const Imagen = ({ foto, expandida = false }) => {
-
+    const { openModal } =useModalPhoto();
     const { dispatch } = useContext(GlobalContext)
 
     const iconoFavorito = foto.favorita ? "/iconos/favorito-activo.png" : "/iconos/favorito.png"
@@ -56,7 +57,7 @@ const Imagen = ({ foto, expandida = false }) => {
                     </BotonIcono>
                     {!expandida && <BotonIcono 
                         aria-hidden={expandida} 
-                        onClick={() => dispatch({ type: 'SET_FOTO_SELECCIONADA', payload: foto })}>
+                        onClick={() => openModal(foto)}>
                         <img src="/iconos/expandir.png" alt="Icono de expandir" />
                     </BotonIcono>}
                 </Pie>
