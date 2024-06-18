@@ -5,7 +5,8 @@ export const GlobalContext = createContext();
 const initialState = {
   search: '',
   fotosDeGaleria: [],
-  fotoSeleccionada: null
+  fotoSeleccionada: null,
+  modalAbierto: false
 };
 
 const reducer = (state, action) => {
