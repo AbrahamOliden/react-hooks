@@ -3,6 +3,7 @@ import Imagen from "../Galeria/Imagen"
 import BotonIcono from "../BotonIcono"
 import { useContext } from "react"
 import { GlobalContext } from "../../context/GlobalContext"
+import useModalPhoto from "../../hooks/useModalPhoto"
 
 const Overlay = styled.div`
 background-color:rgba(0,0,0,.7);
@@ -30,7 +31,7 @@ const DialogEstilizado = styled.dialog`
     }
 `
 const ModalZoom = () => {
-
+    const {} = useModalPhoto();
     const { state, dispatch } = useContext(GlobalContext)
 
     return <>
