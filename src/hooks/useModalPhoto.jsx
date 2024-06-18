@@ -8,7 +8,7 @@ function useModalPhoto() {
         dispatch({ type: 'SET_FOTO_SELECCIONADA', payload: foto})
     };
 
-    const closeModal = (foto) => {
+    const closeModal = () => {
         dispatch({ type: 'SET_FOTO_SELECCIONADA', payload: null})
     };
 
